@@ -102,7 +102,6 @@ def format_cluster_info_to_dict(unit_file_name, source_data, saved_data_type, st
             leaf_node = 0
         else:
             leaf_node = 1
-            
             # if current cluster is leaf node then insert label
             # df_source.iloc[index, :]['clustered_label'] = cluster_string
             # df_source.set_value(index, 'clustered_label', cluster_string)

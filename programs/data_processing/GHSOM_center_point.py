@@ -1,13 +1,21 @@
 from fractions import Fraction
 import pandas as pd
 import argparse
+import plotly.express as px
+
 
 parser = argparse.ArgumentParser(description='manual to this script')
 parser.add_argument('--name', type=str, default = None)
+parser.add_argument('--tau1', type=float, default = 0.1)
+parser.add_argument('--tau2', type=float, default=0.01)
+
+
 # parser.add_argument('--index', type=str, default = None)
 args = parser.parse_args()
 
 prefix = args.name
+t1 = args.tau1
+t2 = args.tau2
 source_path = args.name.replace('-item-seq','')
 
 def GHSOM_center_point(df):
@@ -35,8 +43,9 @@ def GHSOM_center_point(df):
     Py = Py + By_list[-1]* 1/2
     return ([Px,Py])
 
-df_raw = pd.read_csv('./raw-data/%s.csv' % (prefix))
-df_source = pd.read_csv('./applications/%s/data/%s_with_coordinate_representation.csv' % (source_path,prefix))
+df_source = pd.read_csv('./applications/%s/data/%s_with_clustered_label-%s-%s.csv' % (source_path, prefix,t1,t2))
+
+#df_source = pd.read_csv('./applications/%s/data/%s_with_coordinate_representation.csv' % (source_path,prefix))
 def map_cluster_to_ghsom(df_source):
     point_label_x = []
     point_label_y = []
@@ -60,11 +69,43 @@ def map_cluster_to_ghsom(df_source):
     df_source['point_y'] = point_label_y
     
     return(df_source)
+    
 df_source = map_cluster_to_ghsom(df_source)
-df_raw['point_x'] = df_source['point_x']
-df_raw['point_y'] = df_source['point_y']
-df_raw.to_csv('./applications/%s/data/%s_with_point_label.csv' % (source_path, prefix), index=False)
-print(df_raw)
+#df_raw['point_x'] = df_source['point_x']
+#df_raw['point_y'] = df_source['point_y']
+df_source.to_csv('./applications/%s/data/%s_with_clustered_label-%s-%s.csv' % (source_path, prefix,t1,t2), index=False)
+'''
+leaf = df_source.groupby('leaf')
+leaf_group = leaf.groups.keys()
+x = []
+y = []
+for g in leaf_group:
+  filter = (df_source["leaf"] == g)
+  x.append(float(df_source[filter].iloc[0,-4]))
+  y.append(float(df_source[filter].iloc[0,-3]))
+
+leaf_size = leaf.size()
+leaf_mean = leaf.mean()['mean'].tolist()
+
+df = pd.DataFrame()
+df['leaf'] = leaf_size.index
+df['size'] = leaf_size.values
+df['point_x'] = x
+df['point_y'] = y
+df['mean'] = leaf_mean
+
+listlen = []
+for i in df['leaf']:
+  listlen.append(len(i)/4)
+
+df['level number'] = listlen
+
+fig = px.scatter(df, x="point_x", y="point_y",
+	         size="size", color="mean", hover_data=["leaf"])
+fig.show()
+of.plot(fig, filename=('./applications/%s/graphs/%s_bubblemap.html' % (prefix, prefix)))
+'''
+print(df_source)
 
 
 

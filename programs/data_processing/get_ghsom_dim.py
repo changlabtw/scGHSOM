@@ -35,17 +35,17 @@ def layers(name):
                 layer.append(x_dim*y_dim)
             # other layers
             else:
-                layer_index = int(file.split('lvl')[1][0])
+                file_lvls = file.split('lvl')[1]
+                layer_index = int(file_lvls.split('_')[0])
                 max_layer = layer_index if max_layer < layer_index else max_layer
-                
                 if len(layer) != layer_index:
                     layer.append(x_dim*y_dim)
                 else:
                     if (x_dim*y_dim) > layer[layer_index-1]:
                         layer[layer_index-1] = x_dim*y_dim
+
     print('layer:',layer)
     print('max_layer:',max_layer)
-    
     layer_number = layer.copy()
     number_of_digits = [0] * len(layer_number)
 
@@ -61,8 +61,3 @@ def layers(name):
     print('number_of_digits:',number_of_digits)
     return layer,max_layer,number_of_digits
 
-# print('wpg-1',layers('wpg-1'))
-# print('wpg-2',layers('wpg-2'))
-# print('wpg-3',layers('wpg-3'))
-# print('wpg-4',layers('wpg-4'))
-# print('wpg-5',layers('wpg-5'))
