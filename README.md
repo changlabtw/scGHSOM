@@ -31,4 +31,7 @@ get_ghsom_dim.py：取得分群結果dimension
 
 save_cluster_with_clustered_label：產生有clustering結果(Leaf及各Layer)dataframe，並存於data
 
+evaluation/clustering_scores：計算External, Internal evaluation分數
+
+
 
