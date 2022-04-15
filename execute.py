@@ -19,7 +19,7 @@ parser.add_argument('--feature', type=str, default='mean')
 args = parser.parse_args()
 print('tau1 = %s, tau2 = %s' % (args.tau1, args.tau2))
 print('data = %s, index = %s' % (args.data,args.index))
-file = f'{args.data}-{args.tau1}-{args.tau1}'
+file = f'{args.data}-{args.tau1}-{args.tau2}'
 current_path = os.getcwd()
 print('Current:',current_path)
 ##############################

@@ -7,18 +7,17 @@ import argparse
 import os
 
 def layers(name):
-    source_path = name.replace('-item-seq','')
     # init an array to store every layers 
     layer = []
     max_layer = 1
 
     # list all files in /output folder
-    for file in os.listdir('./applications/%s/GHSOM/output/%s' % (source_path,name)):
+    for file in os.listdir('./applications/%s/GHSOM/output/%s' % (name,name)):
         # get all .unit files in /output folder
         if file.endswith('.unit'):
             
             # get file path
-            unit_file_path = os.path.join('./applications/%s/GHSOM/output/%s' % (source_path,name), file)
+            unit_file_path = os.path.join('./applications/%s/GHSOM/output/%s' % (name,name), file)
             print(unit_file_path)
 
             # get attr from content

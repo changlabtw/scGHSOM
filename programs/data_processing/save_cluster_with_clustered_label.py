@@ -21,7 +21,7 @@ t2 = args.tau2
 index = args.index
 file = f'{prefix}-{t1}-{t2}'
 
-layers,max_layer,number_of_digits = get_ghsom_dim.layers(prefix)
+layers,max_layer,number_of_digits = get_ghsom_dim.layers(file)
 # read source file to get data attribute
 df_source = pd.read_csv('./raw-data/%s.csv' % prefix, encoding='utf-8')
 #df_source = pd.read_csv('./applications/%s/data/%s_raw.csv' % (prefix,prefix), low_memory=False)   #if with disease
