@@ -1,11 +1,16 @@
 # GHSOM
 ### Operation description
 input data須為csv檔
+
 rows為training attributes(全部)
+
 columns為欲分群Data
+
 開始分群前請先將index row命名（command須代入index名稱）
 
+
 *raw data請創資料夾名為"raw-data" (與application同層)並放置於此
+
 資料label請放於raw-data/label資料夾 (一樣須為csv檔，並命名label row為"type")
 
 
