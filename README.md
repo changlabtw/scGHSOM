@@ -1,4 +1,6 @@
 # GHSOM
+目前用VS Code 的wsl終端機執行～
+
 ### Operation description
 input data須為csv檔
 
