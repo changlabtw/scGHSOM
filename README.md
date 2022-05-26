@@ -22,7 +22,7 @@ rows為欲分群Data
 ### Command
 於terminal輸入以下command並代入自己的參數
 ```
-python execute.py --index=$index --data=$file_name --tau1=$tau1 --tau2=$tau2
+python3 execute.py --index=$index --data=$file_name --tau1=$tau1 --tau2=$tau2
 ```
 *data, index一定要給(所以要先命名index column，不為空)
 
