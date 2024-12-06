@@ -1,47 +1,63 @@
-# GHSOM
-目前用VS Code 的wsl終端機執行～
+# scGHSOM
+
+Currently running using the WSL terminal in VS Code.
+
+---
 
 ### Prerequisites
-需要安裝JRE(java runtime environment)、Python3.6以上
 
-### Operation description
-input data須為csv檔
+- Requires **JRE (Java Runtime Environment)**  
+- Python version **3.6 or higher**
 
-columnss為training attributes(全部)
+---
 
-rows為欲分群Data
+### Operation Description
 
-開始分群前請先將index column命名（command須代入index名稱）
+- **Input data** must be in **CSV format**.
+- **Columns**: Represent training attributes (all columns).  
+- **Rows**: Represent data to be clustered.  
+- Before starting clustering, **name the index column** (the index name must be passed in the command).
 
+#### File Structure:
 
-*raw data請創資料夾名為"raw-data" (與application同層)並放置於此
+- Create a folder named **`raw-data`** (at the same level as the application) and place raw data files in it.
+- Place labels in the **`raw-data/label`** folder.  
+  - Labels must also be in **CSV format** and the label column should be named **`type`**.
 
-資料label請放於raw-data/label資料夾 (一樣須為csv檔，並命名label column為"type")
-
+---
 
 ### Command
-於terminal輸入以下command並代入自己的參數
+
+Run the following command in the terminal, replacing placeholders with your parameters:
+
 ```
 python3 execute.py --index=$index --data=$file_name --tau1=$tau1 --tau2=$tau2
 ```
-*data, index一定要給(所以要先命名index column，不為空)
 
-*若沒有給tau1,2，tau1預設0.1、 tau2預設0.01
+#### Notes:
+- **`data`** and **`index`** are mandatory parameters (ensure the index column is named and not empty).  
+- If **`tau1`** and **`tau2`** are not provided:  
+  - **`tau1`** defaults to **0.1**  
+  - **`tau2`** defaults to **0.01**
 
-### File description
-raw-data(folder)：放要分群的資料
+---
 
-raw-data/label(folder)：放要分群的資料label（檔名前面部分要一樣，加上_label）
+### File Description
 
-execute.py：全部步驟執行
+- **`raw-data` (folder)**: Stores data to be clustered.  
+- **`raw-data/label` (folder)**: Stores labels for clustering data.  
+  - File names should have the same prefix as the data file, with `_label` appended.
 
-format_ghsom_input_vector.py：產生GHSOM能吃的資料類型
+#### Scripts:
 
-get_ghsom_dim.py：取得分群結果dimension
+- **`execute.py`**: Runs all the steps of the process.  
+- **`format_ghsom_input_vector.py`**: Generates data in a format compatible with GHSOM.  
+- **`get_ghsom_dim.py`**: Retrieves the dimensions of the clustering results.  
+- **`save_cluster_with_clustered_label.py`**: Produces a dataframe with clustering results (Leaf and each Layer) and saves it to the `data` folder.  
 
-save_cluster_with_clustered_label：產生有clustering結果(Leaf及各Layer)dataframe，並存於data
+#### Evaluation:
 
-evaluation/clustering_scores：計算External, Internal evaluation分數
+- **`evaluation/clustering_scores`**: Calculates **external** and **internal** evaluation scores.  
 
 
 
