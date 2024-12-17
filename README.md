@@ -1,9 +1,9 @@
 # scGHSOM
+scGHSOM: A Hierarchical Framework for Single-Cell Data Clustering and Visualization
 
-Currently running using the WSL terminal in VS Code.
 
 ---
-
+Currently running using the WSL terminal in VS Code.
 ### Prerequisites
 
 - Requires **JRE (Java Runtime Environment)**  
