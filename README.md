@@ -21,6 +21,13 @@ Currently running using the WSL terminal in VS Code.
 - Place labels in the **`raw-data/label`** folder.  
   - Labels must also be in **CSV format** and the label column should be named **`type`**.
 
+#### Sets
+- Levine_13
+- Levine_32
+- CyTOF-Samusik
+
+**TO BE ADDED SOON**
+
 #### File Description
 
 - **`raw-data` (folder)**: Stores data to be clustered.  
@@ -33,8 +40,16 @@ Currently running using the WSL terminal in VS Code.
 Run the following command in the terminal, replacing placeholders with your parameters:
 
 ```
+# for Levine_13
+python3 execute.py --index=$index --data=$file_name --tau1=$tau1 --tau2=$tau2
+
+# for Levine_32
+python3 execute.py --index=$index --data=$file_name --tau1=$tau1 --tau2=$tau2
+
+# for CyTOF-Samusik
 python3 execute.py --index=$index --data=$file_name --tau1=$tau1 --tau2=$tau2
 ```
+**TO BE REVISED SOON**
 
 #### Notes:
 - **`data`** and **`index`** are mandatory parameters (ensure the index column is named and not empty).  
@@ -55,4 +70,5 @@ python3 execute.py --index=$index --data=$file_name --tau1=$tau1 --tau2=$tau2
 
 ### References
 --------------
+* Tutorial video **TO BE ADDED SOON**
 * Shang-Jung Wen*, Jia-Ming Chang*, Fang Yu [scGHSOM: A Hierarchical Framework for Single-Cell Data Clustering and Visualization.](https://doi.org/10.48550/arXiv.2407.16984) arXiv:2407.16984 (2024). *joint-first author
