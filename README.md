@@ -26,7 +26,7 @@ Currently running using the WSL terminal in VS Code.
 - Levine_32
 - CyTOF-Samusik
 
-**TO BE ADDED SOON**
+**TO BE ADDED by 06/05**
 
 #### File Description
 
@@ -49,7 +49,7 @@ python3 execute.py --index=$index --data=$file_name --tau1=$tau1 --tau2=$tau2
 # for CyTOF-Samusik
 python3 execute.py --index=$index --data=$file_name --tau1=$tau1 --tau2=$tau2
 ```
-**TO BE REVISED SOON**
+**TO BE REVISED by 06/05**
 
 #### Notes:
 - **`data`** and **`index`** are mandatory parameters (ensure the index column is named and not empty).  
@@ -70,5 +70,5 @@ python3 execute.py --index=$index --data=$file_name --tau1=$tau1 --tau2=$tau2
 
 ### References
 --------------
-* Tutorial video **TO BE ADDED SOON**
+* Tutorial video **TO BE ADDED by 06/05**
 * Shang-Jung Wen*, Jia-Ming Chang*, Fang Yu [scGHSOM: A Hierarchical Framework for Single-Cell Data Clustering and Visualization.](https://doi.org/10.48550/arXiv.2407.16984) arXiv:2407.16984 (2024). *joint-first author
