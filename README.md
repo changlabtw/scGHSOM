@@ -41,13 +41,13 @@ Run the following command in the terminal, replacing placeholders with your para
 
 ```
 # for Levine_13
-python3 execute.py --index=Event --data=Levine_13dim_cleaned --tau1=$tau1 --tau2=$tau2
+python3 execute.py --index=Event --data=Levine_13dim_cleaned --tau1=0.06 --tau2=0.1
 
 # for Levine_32
-python3 execute.py --index=Event --data=Levine_32dim_cleaned --tau1=$tau1 --tau2=$tau2
+python3 execute.py --index=Event --data=Levine_32dim_cleaned --tau1=0.1 --tau2=0.2
 
 # for CyTOF-Samusik
-python3 execute.py --index=Event --data=Samusik_01_cleaned --tau1=$tau1 --tau2=$tau2
+python3 execute.py --index=Event --data=Samusik_01_cleaned --tau1=0.08 --tau2=0.2
 ```
 **TO BE REVISED by 06/05**
 
