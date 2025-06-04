@@ -41,7 +41,7 @@ Run the following command in the terminal, replacing placeholders with your para
 
 ```
 # for Levine_13
-python3 execute.py --index=$index --data=$file_name --tau1=$tau1 --tau2=$tau2
+python3 execute.py --index=Event --data=$file_name --tau1=$tau1 --tau2=$tau2
 
 # for Levine_32
 python3 execute.py --index=$index --data=$file_name --tau1=$tau1 --tau2=$tau2
