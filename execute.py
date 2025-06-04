@@ -28,7 +28,9 @@ print('Current:',current_path)
 # create ghsom input vector file 
 #Ref: http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html#input_vectors
 
-def create_ghsom_input_file(data, file, index, subnum):
+
+# scripts: /data_processing/format_ghsom_input_vector.py 將raw data轉換成csv
+def create_ghsom_input_file(data, file, index, subnum):  
     try:
         #train_columns = extract_disease_input_vector(disease)
         format_ghsom_input_vector(data, file, index, subnum)
@@ -37,6 +39,7 @@ def create_ghsom_input_file(data, file, index, subnum):
         print('Failed to create ghsom input file.')
         print('Error:',e)
 
+# 內建函數 參數設定(tau、維度、學習率)
 # create ghsom prop file 
 # Ref: http://www.ifs.tuwien.ac.at/dm/somtoolbox/examples/PROPERTIES
 def create_ghsom_prop_file(name, file, tau1 = 0.1, tau2 = 0.01, sparseData ='yes', isNormalized = 'false', randomSeed = 7, xSize = 2, ySize = 2, learnRate = 0.7,numIterations = 20000):
@@ -58,6 +61,7 @@ def create_ghsom_prop_file(name, file, tau1 = 0.1, tau2 = 0.01, sparseData ='yes
         writer.writerow(['tau=%s' % tau1])
         writer.writerow(['tau2=%s' % tau2])
 
+# scripts: program/GHSOM/somtoolbox.sh
 # clustering high-dimensional data
 def ghsom_clustering(name,file):
     try:
@@ -65,24 +69,32 @@ def ghsom_clustering(name,file):
         os.system('./programs/GHSOM/somtoolbox.sh GHSOM ./applications/%s/GHSOM/%s_ghsom.prop -h' % (file,name))
     except Exception as e:
         print('Error:',e)
+
+# 使用7z解壓縮
 # extract output data
 def extract_ghsom_output(name, current_path):
     print('cmd=','7z e applications/%s/GHSOM/output/%s -o%s/applications/%s/GHSOM/output/%s' % (name,name,current_path,name,name))
     os.system('7z e applications/%s/GHSOM/output/%s -o%s/applications/%s/GHSOM/output/%s' % (name,name,current_path,name,name))
 
+# script: /data_processing/save_cluster_with_cluster_label.py
 def save_ghsom_cluster_label(name,tau1,tau2,index):
     os.system('python ./programs/data_processing/save_cluster_with_clustered_label.py --name=%s --tau1=%s --tau2=%s --index=%s' % (name,tau1,tau2,index))
     print('Success transfer cluster label of item sequence data.')
-    
-def save_ghsom_cluster_label_with_coordinate(name): #not using
+
+#not using(計算座標) 
+#/data_processing/save_cluster_with_coordinate_representation.py
+def save_ghsom_cluster_label_with_coordinate(name): 
     #os.system('python ./programs/data_processing/save_cluster_with_coordinate_representation.py --name=%s' % name)
     os.system('python ./programs/data_processing/GHSOM_center_point.py --name=%s' % name)
     print('Success transfer cluster label into coordinate.')
 
+#not using(產生treemap視覺圖)
+#/Visualize/generate_treemap.py
 def treemap(name,tau1,tau2,feature):
     os.system('python ./programs/Visualize code/generate_treemap.py --name=%s --tau1=%s --tau2=%s --feature=%s' % (name,tau1,tau2,feature))
     print('Success generate treemap.')
 
+# script: /evaluaiton/clustering_scores.py
 def clustering_evaluation(name,tau1=0.1,tau2=0.01):
     #os.system('python ./programs/data_processing/map_cluster_center_ponit.py --name=%s' % (name))
     os.system('python ./programs/evaluation/clustering_scores.py --name=%s --tau1=%s --tau2=%s' % (name,tau1,tau2))
