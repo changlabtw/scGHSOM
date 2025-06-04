@@ -7,7 +7,6 @@ Currently running using the WSL terminal in VS Code.
 - Requires **JRE (Java Runtime Environment)**  
 - Python version **3.6 or higher**
 
-
 ### Data
 --------------
 - **Input data** must be in **CSV format**.
@@ -22,11 +21,9 @@ Currently running using the WSL terminal in VS Code.
   - Labels must also be in **CSV format** and the label column should be named **`label`**.
 
 #### Sets
-- Levine_13
-- Levine_32
-- CyTOF-Samusik
-
-**TO BE ADDED by 06/05**
+- ./raw-data/Levine_13
+- ./raw-data/Levine_32
+- ./raw-data/CyTOF-Samusik
 
 #### File Description
 
@@ -37,7 +34,7 @@ Currently running using the WSL terminal in VS Code.
 
 ### Usage
 --------------
-Run the following command in the terminal, replacing placeholders with your parameters:
+Run the following commands in the terminal:
 
 ```
 # for Levine_13
@@ -49,7 +46,6 @@ python3 execute.py --index=Event --data=Levine_32dim_cleaned --tau1=0.1 --tau2=0
 # for CyTOF-Samusik
 python3 execute.py --index=Event --data=Samusik_01_cleaned --tau1=0.08 --tau2=0.2
 ```
-**TO BE REVISED by 06/05**
 
 #### Notes:
 - **`data`** and **`index`** are mandatory parameters (ensure the index column is named and not empty).  
