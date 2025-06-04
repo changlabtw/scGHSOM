@@ -9,17 +9,6 @@ Currently running using the WSL terminal in VS Code.
 
 ### Data
 --------------
-- **Input data** must be in **CSV format**.
-- **Columns**: Represent training attributes (all columns).  
-- **Rows**: Represent data to be clustered.  
-- Before starting clustering, **name the index column** (the index name must be passed in the command).
-
-#### File Structure:
-
-- Create a folder named **`raw-data`** (at the same level as the application) and place raw data files in it.
-- Place labels in the **`raw-data/label`** folder.  
-  - Labels must also be in **CSV format** and the label column should be named **`label`**.
-
 #### Sets
 - ./raw-data/Levine_13
 - ./raw-data/Levine_32
@@ -30,7 +19,10 @@ Currently running using the WSL terminal in VS Code.
 - **`raw-data` (folder)**: Stores data to be clustered.  
 - **`raw-data/label` (folder)**: Stores labels for clustering data.  
   - File names should have the same prefix as the data file, with `_label` appended.
-
+- **Input data** must be in **CSV format**.
+- **Columns**: Represent training attributes (all columns).  
+- **Rows**: Represent data to be clustered.  
+- Before starting clustering, **name the index column** (the index name must be passed in the command).
 
 ### Usage
 --------------
