@@ -58,5 +58,5 @@ python3 execute.py --index=Event --data=Samusik_01_cleaned --tau1=0.08 --tau2=0.
 
 ### References
 --------------
-* Tutorial video **TO BE ADDED by 06/05**
+* [Online Tutorial](https://youtu.be/K1OWqli3CzU)
 * Shang-Jung Wen*, Jia-Ming Chang*, Fang Yu [scGHSOM: A Hierarchical Framework for Single-Cell Data Clustering and Visualization.](https://doi.org/10.48550/arXiv.2407.16984) arXiv:2407.16984 (2024). *joint-first author
