@@ -50,11 +50,26 @@ python3 execute.py --index=Event --data=Samusik_01_cleaned --tau1=0.08 --tau2=0.
 - **`execute.py`**: Runs all the process steps.  
 - **`format_ghsom_input_vector.py`**: Generates data in a format compatible with GHSOM.  
 - **`get_ghsom_dim.py`**: Retrieves the dimensions of the clustering results.  
-- **`save_cluster_with_clustered_label.py`**: Produces a data frame with clustering results (Leaf and each Layer) and saves it to the `data` folder.  
+- **`save_cluster_with_clustered_label.py`**: Produces a data frame with clustering results (Leaf and each Layer) and saves it to the `data` folder.
 
 #### Evaluation:
 
-- **`evaluation/clustering_scores`**: Calculates **external** and **internal** evaluation scores.  
+- **`evaluation/clustering_scores`**: Calculates **external** and **internal** evaluation scores.
+
+### Visualization
+--------------
+Run the following commands in the terminal:
+
+```
+# Cluster Feature Map
+python3 programs/Visualize/cluster_feature_map.py --data=Samusik_01_cleaned --tau1=0.08 --tau2=0.2
+
+# Cluster Distribution Map
+python3 programs/Visualize/cluster_distribution_map.py --data=Samusik_01_cleaned --tau1=0.08 --tau2=0.2
+```
+
+#### Notes:
+- **`data`**, **`tau1`**, and **`tau2`** should be set based on your dataset and analysis needs.
 
 ### References
 --------------
