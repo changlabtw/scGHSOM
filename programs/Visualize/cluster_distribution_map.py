@@ -129,9 +129,9 @@ def cluster_distribution_map(name, tau1, tau2):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Plot Cluster Distribution Map for scGHSOM')
-    parser.add_argument('--name', type=str, required=True)
+    parser.add_argument('--data', type=str, required=True)
     parser.add_argument('--tau1', type=float, required=True)
     parser.add_argument('--tau2', type=float, required=True)
     args = parser.parse_args()
 
-    cluster_distribution_map(args.name, args.tau1, args.tau2)
+    cluster_distribution_map(args.data, args.tau1, args.tau2)
