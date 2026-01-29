@@ -74,4 +74,5 @@ python3 programs/Visualize/cluster_distribution_map.py --data=Samusik_01_cleaned
 ### References
 --------------
 * [Online Tutorial](https://youtu.be/K1OWqli3CzU)
-* Shang-Jung Wen*, Jia-Ming Chang*, Fang Yu [scGHSOM: A Hierarchical Framework for Single-Cell Data Clustering and Visualization.](https://doi.org/10.48550/arXiv.2407.16984) arXiv:2407.16984 (2024). *joint-first author
+* Shang-Jung Wen*, Jia-Ming Chang*, David Jing-Wei Chen, and Fang Yu [scGHSOM: A Hierarchical Framework for Single-Cell Data Clustering and Visualization.](https://ieeexplore.ieee.org/document/11098883) 2025 IEEE Transactions on Computational Biology and Bioinformatics PP (99): 1–17. doi:10.1109/tcbbio.2025.3593632.
+* [Web server](https://scghsom.changlabtw.com/)
